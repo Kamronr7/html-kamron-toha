@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn HTML lists: unordered lists, ordered lists, nested lists and description lists.">
+  <meta name="author" content="Learn HTML">
+  <title>Lists – Learn HTML</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <a class="logo" href="index.html">&lt;learn-html&gt;</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="text.html">Text</a>
+      <a href="links.html">Links</a>
+      <a href="lists.html" aria-current="page">Lists</a>
+      <a href="tables.html">Tables</a>
+      <a href="forms.html">Forms</a>
+      <a href="media.html">Media</a>
+      <a href="semantic.html">Semantic</a>
+      <a href="metadata.html">Metadata</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero page-intro">
+      <div class="hero-text">
+        <h1>Page 4: Lists</h1>
+        <p>Lists group related items so they are easy to scan. HTML has three kinds: bullet lists, numbered lists and description lists.</p>
+        <p class="jump">On this page: <a href="#ul">Unordered</a>, <a href="#ol">Ordered</a>, <a href="#nested">Nested</a>, <a href="#dl">Description</a></p>
+      </div>
+    </section>
+
+    <section id="ul" class="section">
+      <h2>Unordered lists: &lt;ul&gt;</h2>
+      <p>Use <code>&lt;ul&gt;</code> when the order of the items does not matter. Each item goes in an <code>&lt;li&gt;</code> (list item). Browsers show bullets.</p>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <div class="demo">
+        <p class="demo-label">Result</p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ol" class="section">
+      <h2>Ordered lists: &lt;ol&gt;</h2>
+      <p>Use <code>&lt;ol&gt;</code> when the order matters, such as steps or rankings. Browsers number the items for you.</p>
+      <pre><code>&lt;ol&gt;
+  &lt;li&gt;Create a folder&lt;/li&gt;
+  &lt;li&gt;Add index.html&lt;/li&gt;
+  &lt;li&gt;Open it in a browser&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol start="5" type="A"&gt;…&lt;/ol&gt;
+&lt;ol reversed&gt;…&lt;/ol&gt;</code></pre>
+      <div class="demo">
+        <p class="demo-label">Result</p>
+        <ol>
+          <li>Create a folder</li>
+          <li>Add index.html</li>
+          <li>Open it in a browser</li>
+        </ol>
+        <p class="demo-label">With start="5" and type="A"</p>
+        <ol start="5" type="A">
+          <li>Starts at the fifth letter</li>
+          <li>Then continues</li>
+        </ol>
+      </div>
+      <dl>
+        <dt>start</dt>
+        <dd>The number to begin counting from.</dd>
+        <dt>type</dt>
+        <dd>The numbering style: <code>1</code>, <code>A</code>, <code>a</code>, <code>I</code> or <code>i</code>.</dd>
+        <dt>reversed</dt>
+        <dd>Counts down instead of up, like a top 10 list.</dd>
+      </dl>
+    </section>
+
+    <section id="nested" class="section">
+      <h2>Nested lists</h2>
+      <p>To put a list inside another, place the inner list inside an <code>&lt;li&gt;</code>, not directly inside the outer <code>&lt;ul&gt;</code>.</p>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Fruit
+    &lt;ul&gt;
+      &lt;li&gt;Apple&lt;/li&gt;
+      &lt;li&gt;Banana&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vegetables&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <div class="demo">
+        <p class="demo-label">Result</p>
+        <ul>
+          <li>Fruit
+            <ul>
+              <li>Apple</li>
+              <li>Banana</li>
+            </ul>
+          </li>
+          <li>Vegetables</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="dl" class="section">
+      <h2>Description lists: &lt;dl&gt;</h2>
+      <p>A description list pairs terms with their meanings, like a glossary. <code>&lt;dt&gt;</code> is the term and <code>&lt;dd&gt;</code> is the description. The lists of tags on this site are built this way.</p>
+      <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;The structure of a web page.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;The style of a web page.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      <div class="demo">
+        <p class="demo-label">Result</p>
+        <dl>
+          <dt>HTML</dt>
+          <dd>The structure of a web page.</dd>
+          <dt>CSS</dt>
+          <dd>The style of a web page.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Good to know</h2>
+      <dl>
+        <dt>Only &lt;li&gt; inside &lt;ul&gt; and &lt;ol&gt;</dt>
+        <dd>Do not put paragraphs or other tags directly inside the list tags. Put them inside an <code>&lt;li&gt;</code>.</dd>
+        <dt>Menus are lists</dt>
+        <dd>The navigation menu at the top of this site is a group of links. Many sites build menus as a <code>&lt;ul&gt;</code> inside <code>&lt;nav&gt;</code> and use CSS to remove the bullets.</dd>
+        <dt>Do not fake a list</dt>
+        <dd>Typing a dash or a number at the start of a line is not a list. Use the list tags so screen readers can say "list of 3 items".</dd>
+      </dl>
+    </section>
+
+    <section class="section">
+      <h2>Practice</h2>
+      <ol class="steps">
+        <li>Make an ordered list of the steps to open your project in VS Code.</li>
+        <li>Make an unordered list of your three favorite websites, each item a link.</li>
+        <li>Write a description list with three HTML tags and what they do.</li>
+      </ol>
+    </section>
+
+    <section class="section pager">
+      <a href="links.html">&larr; Page 3: Links, images, video, audio</a>
+      <a href="tables.html">Page 5: Tables &rarr;</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Learn HTML. Made for beginners.</p>
+    <a href="#top">Back to top</a>
+  </footer>
+</body>
+</html>
