@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - HTML Review</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>HTML Review Website</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="metadata.html">Metadata</a>
+        <a href="text.html">Text</a>
+        <a href="links.html">Links</a>
+        <a href="lists.html">Lists</a>
+        <a href="tables.html">Tables</a>
+        <a href="forms.html">Forms</a>
+        <a href="media.html">Multimedia</a>
+        <a href="semantic.html">Semantic</a>
+    </nav>
+</header>
+
+
+<main>
+
+    <h2>HTML Forms</h2>
+
+    <p>
+        HTML forms are used to collect information from users.
+        Forms can contain text fields, buttons, checkboxes, dropdowns
+        and other input elements.
+    </p>
+
+
+    <!-- FORM TAG -->
+
+    <section>
+        <h2>&lt;form&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;form&gt; tag is used to create an HTML form
+            for collecting user input.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>action</td>
+                <td>Specifies where the form data will be sent.</td>
+            </tr>
+
+            <tr>
+                <td>method</td>
+                <td>Specifies how the form data will be sent.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;form&gt;
+    &lt;input type="text"&gt;
+&lt;/form&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <form>
+            <input type="text">
+        </form>
+
+    </section>
+
+
+    <!-- LABEL TAG -->
+
+    <section>
+        <h2>&lt;label&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;label&gt; tag is used to describe an input field.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>for</td>
+                <td>Connects the label to an input element.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;label for="name"&gt;Name:&lt;/label&gt;
+&lt;input type="text" id="name"&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+
+    </section>
+
+
+    <!-- INPUT TAG -->
+
+    <section>
+        <h2>&lt;input&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;input&gt; tag allows the user to enter information.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>type</td>
+                <td>Specifies the type of input.</td>
+            </tr>
+
+            <tr>
+                <td>name</td>
+                <td>Specifies the name of the input.</td>
+            </tr>
+
+            <tr>
+                <td>placeholder</td>
+                <td>Shows temporary text inside the input.</td>
+            </tr>
+
+            <tr>
+                <td>required</td>
+                <td>Makes the field required.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;input type="text" placeholder="Enter your name"&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <input type="text" placeholder="Enter your name">
+
+    </section>
+
+
+    <!-- TEXTAREA TAG -->
+
+    <section>
+        <h2>&lt;textarea&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;textarea&gt; tag creates a multi-line text input.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>rows</td>
+                <td>Specifies the number of visible text rows.</td>
+            </tr>
+
+            <tr>
+                <td>cols</td>
+                <td>Specifies the width of the text area.</td>
+            </tr>
+
+            <tr>
+                <td>placeholder</td>
+                <td>Shows temporary text inside the field.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;textarea rows="4" cols="30"&gt;&lt;/textarea&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <textarea rows="4" cols="30" placeholder="Write your message"></textarea>
+
+    </section>
+
+
+    <!-- SELECT TAG -->
+
+    <section>
+        <h2>&lt;select&gt; and &lt;option&gt; Tags</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;select&gt; tag creates a dropdown list.
+            The &lt;option&gt; tag defines the choices inside it.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>name</td>
+                <td>Specifies the name of the dropdown.</td>
+            </tr>
+
+            <tr>
+                <td>value</td>
+                <td>Specifies the value of an option.</td>
+            </tr>
+
+            <tr>
+                <td>selected</td>
+                <td>Sets an option as selected by default.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;select&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+    &lt;option&gt;JavaScript&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <select>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+        </select>
+
+    </section>
+
+
+    <!-- CHECKBOX -->
+
+    <section>
+        <h2>Checkbox Input</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            A checkbox allows the user to select one or more options.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>type</td>
+                <td>Set to checkbox to create a checkbox.</td>
+            </tr>
+
+            <tr>
+                <td>checked</td>
+                <td>Makes the checkbox selected by default.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;input type="checkbox"&gt; I agree</code></pre>
+
+        <h3>Result</h3>
+
+        <input type="checkbox"> I agree
+
+    </section>
+
+
+    <!-- RADIO BUTTON -->
+
+    <section>
+        <h2>Radio Button Input</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            Radio buttons allow the user to select one option
+            from a group.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>type</td>
+                <td>Set to radio to create a radio button.</td>
+            </tr>
+
+            <tr>
+                <td>name</td>
+                <td>Groups radio buttons together.</td>
+            </tr>
+
+            <tr>
+                <td>value</td>
+                <td>Specifies the value of the option.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;input type="radio" name="language"&gt; HTML
+&lt;input type="radio" name="language"&gt; CSS</code></pre>
+
+        <h3>Result</h3>
+
+        <input type="radio" name="language"> HTML
+        <input type="radio" name="language"> CSS
+
+    </section>
+
+
+    <!-- BUTTON TAG -->
+
+    <section>
+        <h2>&lt;button&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;button&gt; tag creates a clickable button.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>type</td>
+                <td>Specifies the type of button.</td>
+            </tr>
+
+            <tr>
+                <td>disabled</td>
+                <td>Disables the button.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;button type="button"&gt;Click Me&lt;/button&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <button type="button">Click Me</button>
+
+    </section>
+
+
+    <!-- COMPLETE FORM -->
+
+    <section>
+        <h2>Complete Form Example</h2>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;form&gt;
+
+    &lt;label for="username"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="username" placeholder="Your name"&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" placeholder="Your email"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <form>
+
+            <p>
+                <label for="username">Name:</label>
+                <input type="text" id="username" placeholder="Your name">
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Your email">
+            </p>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>HTML Review Project</p>
+</footer>
+
+</body>
+</html>
