@@ -1,0 +1,209 @@
+/* ==========================================================
+   Learn HTML – shared stylesheet for every page
+   Sections: 1 Variables  2 Base  3 Header and menu  4 Page layout
+             5 Content tags  6 Tables  7 Forms  8 Media
+             9 Home page extras  10 Lesson extras  11 Footer  12 Small screens
+   ========================================================== */
+
+/* 1. Variables: change a color here and it changes everywhere */
+:root {
+  --paper: #eef3f8;
+  --surface: #ffffff;
+  --ink: #0f1b2d;
+  --muted: #4d5b70;
+  --line: #cbd6e3;
+  --accent: #2547d0;
+  --marker: #ffd23f;
+  --code-bg: #0f1b2d;
+  --code-ink: #e8eefc;
+}
+
+/* 2. Base */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+h1, h2 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 0 0 1rem; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 .5rem; }
+h3 { font-size: 1.05rem; margin: 1.5rem 0 .35rem; color: var(--accent); }
+p { max-width: 62ch; }
+a { color: var(--accent); }
+hr { border: 0; border-top: 2px solid var(--line); margin: 1.25rem 0; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+code, pre, textarea.code { font-family: Consolas, "SF Mono", Menlo, monospace; }
+:not(pre) > code {
+  background: rgba(255, 210, 63, .45);
+  padding: 0 .25rem;
+  border-radius: 2px;
+  font-size: .92em;
+}
+pre {
+  margin: 1rem 0; padding: 1.25rem; overflow-x: auto;
+  background: var(--code-bg); color: var(--code-ink);
+  border-radius: 6px; font-size: .95rem; line-height: 1.6;
+}
+
+/* 3. Header and menu (works with <header> and with .site-header) */
+body > header, .site-header {
+  display: flex; flex-wrap: wrap; gap: .75rem 2rem;
+  align-items: center; justify-content: space-between;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  background: var(--surface);
+  border-bottom: 2px solid var(--ink);
+}
+body > header h1 { margin: 0; font-size: 1.4rem; }
+.logo { font-family: Consolas, Menlo, monospace; font-weight: 700; color: var(--ink); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+nav a { color: var(--ink); text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+nav a:hover { border-color: var(--accent); }
+nav a[aria-current="page"] { border-color: var(--ink); font-weight: 600; }
+
+/* 4. Page layout */
+body > main { padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem; max-width: 1200px; margin: 0 auto; }
+body > main > section:not(.hero) { padding: 2rem 0; border-top: 2px solid var(--ink); }
+.page-intro { grid-template-columns: 1fr; }
+
+/* 5. Content tags */
+ul, ol { padding-left: 1.5rem; }
+dl { margin: 1rem 0 0; }
+dt { font-family: Consolas, Menlo, monospace; font-weight: 700; margin-top: .9rem; }
+dt:first-child { margin-top: 0; }
+dd { margin: .1rem 0 0; color: var(--muted); }
+figure { margin: 0; }
+figcaption { font-size: .9rem; color: var(--muted); margin-top: .35rem; }
+aside { margin: 1rem 0; padding: .5rem 1rem; background: var(--surface); border-left: 5px solid var(--marker); }
+article { margin: 1rem 0; padding: .75rem 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+article h2 { font-size: 1.3rem; }
+.steps { max-width: 46rem; }
+.plain { list-style: none; padding: 0; margin: 0; display: grid; gap: .35rem; }
+.jump a { margin-right: .5rem; }
+.pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* 6. Tables */
+table { border-collapse: collapse; background: var(--surface); max-width: 100%; margin: .75rem 0; }
+caption { text-align: left; font-weight: 700; padding-bottom: .4rem; }
+th, td { border: 1px solid var(--ink); padding: .5rem .85rem; text-align: left; vertical-align: top; }
+table tr:first-child > th:not([scope="row"]) { background: var(--ink); color: #fff; }
+tbody th, th[scope="row"] { background: var(--paper); }
+table tfoot th, table tfoot td { background: var(--marker); color: var(--ink); font-weight: 700; }
+
+/* 7. Forms */
+form { max-width: 32rem; margin: 1rem 0; }
+form p { margin: .6rem 0; }
+label { font-weight: 600; margin-right: .4rem; }
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+  font: inherit; max-width: 100%; padding: .5rem .7rem;
+  background: var(--surface); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 4px;
+}
+input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+button, input[type="submit"], input[type="reset"] {
+  font: inherit; font-weight: 600; cursor: pointer;
+  padding: .6rem 1.1rem; background: var(--ink); color: #fff;
+  border: 0; border-radius: 4px; box-shadow: 3px 3px 0 var(--marker);
+}
+button:hover, input[type="submit"]:hover { background: var(--accent); }
+.link-button {
+  justify-self: start; background: none; color: var(--accent); box-shadow: none;
+  padding: 0; font-weight: 400; text-decoration: underline;
+}
+.link-button:hover { background: none; }
+
+/* 8. Media */
+img, video { max-width: 100%; height: auto; }
+audio { display: block; width: 100%; max-width: 30rem; }
+
+/* 9. Home page extras */
+.hero {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; align-items: center;
+  padding: clamp(2rem, 6vw, 4.5rem) 0;
+}
+.hero-text p { color: var(--muted); font-size: 1.15rem; }
+.button {
+  display: inline-block; margin-top: .5rem; padding: .75rem 1.25rem;
+  background: var(--ink); color: #fff; text-decoration: none; font-weight: 600;
+  border-radius: 4px; box-shadow: 4px 4px 0 var(--marker);
+}
+.button:hover { background: var(--accent); }
+
+.playground {
+  display: grid; gap: .4rem; padding: 1rem;
+  background: var(--surface); border: 2px solid var(--ink); border-radius: 6px;
+}
+.playground label, .playground .label { font-weight: 600; font-size: .9rem; margin: 0; }
+.playground textarea {
+  width: 100%; height: 11rem; resize: vertical; border: 0;
+  background: var(--code-bg); color: var(--code-ink);
+  font-family: Consolas, "SF Mono", Menlo, monospace; font-size: .95rem; line-height: 1.5; tab-size: 2;
+}
+.hint { margin: 0; font-size: .85rem; color: var(--muted); }
+#preview { width: 100%; height: 10rem; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+
+.skeleton { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 1.5rem 2.5rem; margin-top: 1.5rem; }
+.skeleton pre { margin: 0; }
+.skeleton dl { margin: 0; }
+
+.progress { font-weight: 600; margin-bottom: 1rem; }
+.lessons { list-style: decimal; padding-left: 1.75rem; margin: 0; display: grid; gap: .6rem; max-width: 46rem; }
+.lessons li::marker { font-weight: 700; }
+.lessons label {
+  display: flex; align-items: center; gap: 1rem; margin: 0; font-weight: 400;
+  padding: .75rem 1rem; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 4px;
+}
+.lessons input { width: 1.25rem; height: 1.25rem; flex: none; }
+.lessons a { color: var(--ink); text-decoration: none; display: grid; }
+.lessons a span { font-weight: 600; color: var(--accent); }
+.lessons a:hover span { text-decoration: underline; }
+
+/* 10. Lesson page extras (demo boxes and the metadata lab) */
+.demo { margin: 1.25rem 0; padding: 1rem 1.25rem; background: var(--surface); border: 2px dashed var(--ink); border-radius: 6px; }
+.demo-label { margin: .75rem 0 .35rem; font-weight: 600; font-size: .9rem; }
+.demo-label:first-child { margin-top: 0; }
+.demo ul, .demo ol { margin: .25rem 0; }
+.demo ul ul { margin-top: 0; }
+.demo dl { margin: 0; }
+.demo table { margin: 0; }
+
+.snippet-lab { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; align-items: start; }
+.fields { display: grid; gap: .4rem; }
+.fields label { display: flex; justify-content: space-between; font-size: .9rem; margin: 0; }
+textarea.short { height: 6rem; }
+.count { font-weight: 400; color: var(--muted); }
+.count.over { color: #b3261e; font-weight: 700; }
+.snippet { padding: 1.25rem; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+.snippet p { margin: 0; max-width: none; }
+.snippet-url { font-size: .85rem; color: var(--muted); }
+.snippet-title { font-size: 1.25rem; color: var(--accent); margin: .2rem 0 !important; overflow-wrap: anywhere; }
+.snippet-desc { color: var(--muted); font-size: .95rem; overflow-wrap: anywhere; }
+
+/* 11. Footer */
+body > footer, .site-footer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem;
+  padding: 1.25rem clamp(1rem, 4vw, 3rem);
+  background: var(--ink); color: #fff;
+}
+body > footer p, .site-footer p { margin: 0; }
+body > footer a, .site-footer a { color: var(--marker); }
+
+/* 12. Small screens and accessibility */
+@media (max-width: 800px) {
+  .hero, .skeleton, .snippet-lab { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  table { display: block; overflow-x: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
