@@ -145,7 +145,7 @@
       dc.textContent = d.value.length + ' / 160';
       tc.classList.toggle('over', t.value.length > 60);
       dc.classList.toggle('over', d.value.length > 160);
-    }
+}
     t.addEventListener('input', render);
     d.addEventListener('input', render);
     render();
