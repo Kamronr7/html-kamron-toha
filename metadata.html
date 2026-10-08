@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn what HTML metadata is and how the head, meta tags and Open Graph tags describe your page.">
+  <meta name="author" content="Learn HTML">
+  <title>Metadata – Learn HTML</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">&lt;learn-html&gt;</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="text.html">Text</a>
+      <a href="links.html">Links</a>
+      <a href="lists.html">Lists</a>
+      <a href="tables.html">Tables</a>
+      <a href="forms.html">Forms</a>
+      <a href="media.html">Media</a>
+      <a href="semantic.html">Semantic</a>
+      <a href="metadata.html" aria-current="page">Metadata</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero page-intro">
+      <div class="hero-text">
+        <h1>Page 9: Metadata</h1>
+        <p>Metadata is information about your page, not part of the page itself. Visitors never see it, but browsers, search engines and chat apps read it.</p>
+        <a class="button" href="#essentials">See the essential tags</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where metadata lives</h2>
+      <p>All metadata goes inside the <code>&lt;head&gt;</code> element, before <code>&lt;body&gt;</code>. Only the <code>&lt;title&gt;</code> shows up for visitors, in the browser tab.</p>
+    </section>
+
+    <section id="essentials" class="section">
+      <h2>The essential tags</h2>
+      <p>Put these in the head of every page you build.</p>
+
+      <div class="skeleton">
+        <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0"&gt;
+  &lt;title&gt;Metadata – Learn HTML&lt;/title&gt;
+  &lt;meta name="description"
+        content="What metadata is and
+                 how to write it."&gt;
+  &lt;meta name="author" content="Your name"&gt;
+  &lt;link rel="stylesheet"
+        href="css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+        <dl>
+          <dt>charset</dt>
+          <dd>The text encoding. <code>UTF-8</code> lets the page show any language and symbol correctly.</dd>
+          <dt>viewport</dt>
+          <dd>Makes the page fit phone screens instead of shrinking a desktop layout.</dd>
+          <dt>title</dt>
+          <dd>The name in the browser tab, bookmarks and search results. Make it different on every page.</dd>
+          <dt>description</dt>
+          <dd>A one or two sentence summary that search engines often show under the title.</dd>
+          <dt>author</dt>
+          <dd>Who made the page.</dd>
+          <dt>link</dt>
+          <dd>Connects the page to another file, such as a stylesheet or an icon.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Try it: write a search result</h2>
+      <p>Edit the title and description to see how they could look in a search engine. Titles around 60 characters and descriptions around 160 characters fit best.</p>
+
+      <div class="snippet-lab">
+        <div class="fields">
+          <label for="t">Title <span id="tc" class="count"></span></label>
+          <input id="t" type="text" value="Metadata – Learn HTML">
+          <label for="d">Description <span id="dc" class="count"></span></label>
+          <textarea id="d" class="short" spellcheck="false">Learn what HTML metadata is and how meta tags describe your page.</textarea>
+        </div>
+        <div class="snippet" aria-live="polite">
+          <p class="snippet-url">yoursite.github.io › metadata.html</p>
+          <p id="st" class="snippet-title"></p>
+          <p id="sd" class="snippet-desc"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Share previews: Open Graph tags</h2>
+      <p>When someone pastes your link into a chat or social app, it reads Open Graph tags to build the preview card.</p>
+      <pre><code>&lt;meta property="og:title" content="Learn HTML"&gt;
+&lt;meta property="og:description" content="Nine short pages for beginners."&gt;
+&lt;meta property="og:image" content="images/preview.png"&gt;
+&lt;meta property="og:type" content="website"&gt;</code></pre>
+      <p>Other useful tags:</p>
+      <dl>
+        <dt>&lt;meta name="robots" content="noindex"&gt;</dt>
+        <dd>Asks search engines not to list this page.</dd>
+        <dt>&lt;meta name="theme-color" content="#2547d0"&gt;</dt>
+        <dd>Colors the browser bar on many phones.</dd>
+        <dt>&lt;link rel="icon" href="images/favicon.png"&gt;</dt>
+        <dd>The small icon in the browser tab.</dd>
+      </dl>
+      <p>The <code>keywords</code> meta tag is a common old habit. Search engines now ignore it, so you can skip it.</p>
+    </section>
+
+    <section class="section">
+      <h2>Look at any page's metadata</h2>
+      <ol class="steps">
+        <li>Open any website.</li>
+        <li>Press <code>Ctrl+U</code> (<code>Cmd+Option+U</code> on Mac) to view the source.</li>
+        <li>Look at the top of the file, between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code>.</li>
+      </ol>
+      <h2>Practice</h2>
+      <p>Open your <code>index.html</code> and add a <code>description</code> and an <code>author</code> meta tag to its head. Then change the <code>&lt;title&gt;</code> so it describes only that page.</p>
+    </section>
+
+    <section class="section pager">
+      <a href="semantic.html">&larr; Page 8: Semantic and layout tags</a>
+      <a href="index.html">Back to Home</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Learn HTML. Made for beginners.</p>
+    <a href="#top" onclick="window.scrollTo({top:0})">Back to top</a>
+  </footer>
+
+  <script>
+    var t = document.getElementById('t');
+    var d = document.getElementById('d');
+    function render() {
+      document.getElementById('st').textContent = t.value || 'Untitled page';
+      document.getElementById('sd').textContent = d.value;
+      var tc = document.getElementById('tc');
+      var dc = document.getElementById('dc');
+      tc.textContent = t.value.length + ' / 60';
+      dc.textContent = d.value.length + ' / 160';
+      tc.classList.toggle('over', t.value.length > 60);
+      dc.classList.toggle('over', d.value.length > 160);
+    }
+    t.addEventListener('input', render);
+    d.addEventListener('input', render);
+    render();
+  </script>
+</body>
+</html>
