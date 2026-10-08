@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia - HTML Review</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>HTML Review Website</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="metadata.html">Metadata</a>
+        <a href="text.html">Text</a>
+        <a href="links.html">Links</a>
+        <a href="lists.html">Lists</a>
+        <a href="tables.html">Tables</a>
+        <a href="forms.html">Forms</a>
+        <a href="media.html">Multimedia</a>
+        <a href="semantic.html">Semantic</a>
+    </nav>
+</header>
+
+
+<main>
+
+    <h2>HTML Multimedia</h2>
+
+    <p>
+        HTML multimedia elements are used to display images,
+        audio and video on a web page.
+    </p>
+
+
+    <!-- IMG TAG -->
+
+    <section>
+        <h2>&lt;img&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;img&gt; tag is used to display an image
+            on a web page.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>src</td>
+                <td>Specifies the path to the image.</td>
+            </tr>
+
+            <tr>
+                <td>alt</td>
+                <td>Provides alternative text for the image.</td>
+            </tr>
+
+            <tr>
+                <td>width</td>
+                <td>Specifies the width of the image.</td>
+            </tr>
+
+            <tr>
+                <td>height</td>
+                <td>Specifies the height of the image.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;img src="images/example.jpg" alt="Example image" width="300"&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <img src="images/example.jpg"
+             alt="Example image"
+             width="300">
+
+    </section>
+
+
+    <!-- AUDIO TAG -->
+
+    <section>
+        <h2>&lt;audio&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;audio&gt; tag is used to play audio files
+            on a web page.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>controls</td>
+                <td>Displays audio controls such as play and volume.</td>
+            </tr>
+
+            <tr>
+                <td>autoplay</td>
+                <td>Starts playing the audio automatically.</td>
+            </tr>
+
+            <tr>
+                <td>loop</td>
+                <td>Repeats the audio when it finishes.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;audio controls&gt;
+    &lt;source src="audio/example.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <audio controls>
+            <source src="audio/example.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+    </section>
+
+
+    <!-- VIDEO TAG -->
+
+    <section>
+        <h2>&lt;video&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;video&gt; tag is used to display and play
+            video files on a web page.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>controls</td>
+                <td>Displays video controls.</td>
+            </tr>
+
+            <tr>
+                <td>width</td>
+                <td>Specifies the width of the video.</td>
+            </tr>
+
+            <tr>
+                <td>height</td>
+                <td>Specifies the height of the video.</td>
+            </tr>
+
+            <tr>
+                <td>autoplay</td>
+                <td>Starts the video automatically.</td>
+            </tr>
+
+            <tr>
+                <td>loop</td>
+                <td>Repeats the video when it finishes.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;video width="400" controls&gt;
+    &lt;source src="video/example.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <video width="400" controls>
+            <source src="video/example.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+    </section>
+
+
+    <!-- SOURCE TAG -->
+
+    <section>
+        <h2>&lt;source&gt; Tag</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;source&gt; tag is used to specify media files
+            for audio and video elements.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>src</td>
+                <td>Specifies the location of the media file.</td>
+            </tr>
+
+            <tr>
+                <td>type</td>
+                <td>Specifies the type of the media file.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;video controls&gt;
+    &lt;source src="video/movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <video width="400" controls>
+            <source src="video/movie.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+    </section>
+
+
+    <!-- FIGURE TAG -->
+
+    <section>
+        <h2>&lt;figure&gt; and &lt;figcaption&gt; Tags</h2>
+
+        <h3>Definition</h3>
+
+        <p>
+            The &lt;figure&gt; tag groups media content such as an image.
+            The &lt;figcaption&gt; tag provides a caption for it.
+        </p>
+
+        <h3>Attributes</h3>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Role</th>
+            </tr>
+
+            <tr>
+                <td>class</td>
+                <td>Assigns a CSS class to the element.</td>
+            </tr>
+
+            <tr>
+                <td>id</td>
+                <td>Gives the element a unique identifier.</td>
+            </tr>
+        </table>
+
+        <h3>Example Code</h3>
+
+        <pre><code>&lt;figure&gt;
+    &lt;img src="images/example.jpg" alt="Example" width="300"&gt;
+    &lt;figcaption&gt;Example image&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+        <h3>Result</h3>
+
+        <figure>
+            <img src="images/example.jpg"
+                 alt="Example"
+                 width="300">
+
+            <figcaption>Example image</figcaption>
+        </figure>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>HTML Review Project</p>
+</footer>
+
+</body>
+</html>
