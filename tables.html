@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn HTML tables: table, tr, th, td, caption, thead, tbody, colspan and rowspan.">
+  <meta name="author" content="Learn HTML">
+  <title>Tables – Learn HTML</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <a class="logo" href="index.html">&lt;learn-html&gt;</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="text.html">Text</a>
+      <a href="links.html">Links</a>
+      <a href="lists.html">Lists</a>
+      <a href="tables.html" aria-current="page">Tables</a>
+      <a href="forms.html">Forms</a>
+      <a href="media.html">Media</a>
+      <a href="semantic.html">Semantic</a>
+      <a href="metadata.html">Metadata</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero page-intro">
+      <div class="hero-text">
+        <h1>Page 5: Tables</h1>
+        <p>Tables show data in rows and columns, like a timetable or a price list. Use them for data, not to arrange the layout of a page.</p>
+        <p class="jump">On this page: <a href="#basic">Basic table</a>, <a href="#parts">Table parts</a>, <a href="#span">Merging cells</a></p>
+      </div>
+    </section>
+
+    <section id="basic" class="section">
+      <h2>A basic table</h2>
+      <p>Build a table row by row. <code>&lt;table&gt;</code> wraps everything, <code>&lt;tr&gt;</code> is a row, <code>&lt;th&gt;</code> is a heading cell and <code>&lt;td&gt;</code> is a data cell.</p>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Tag&lt;/th&gt;
+    &lt;th&gt;Purpose&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&amp;lt;p&amp;gt;&lt;/td&gt;
+    &lt;td&gt;Paragraph&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&amp;lt;a&amp;gt;&lt;/td&gt;
+    &lt;td&gt;Link&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      <div class="demo">
+        <p class="demo-label">Result</p>
+        <table>
+          <tr><th>Tag</th><th>Purpose</th></tr>
+          <tr><td>&lt;p&gt;</td><td>Paragraph</td></tr>
+          <tr><td>&lt;a&gt;</td><td>Link</td></tr>
+        </table>
+      </div>
+      <p>To show a tag name as text, write <code>&amp;lt;</code> for <code>&lt;</code> and <code>&amp;gt;</code> for <code>&gt;</code>. Otherwise the browser reads it as a real tag.</p>
+    </section>
+
+    <section id="parts" class="section">
+      <h2>Table parts</h2>
+      <p>Larger tables use extra tags that give each part a meaning.</p>
+      <pre><code>&lt;table&gt;
+  &lt;caption&gt;Weekly study plan&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Day&lt;/th&gt;
+      &lt;th scope="col"&gt;Topic&lt;/th&gt;
+      &lt;th scope="col"&gt;Hours&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Monday&lt;/th&gt;
+      &lt;td&gt;Text tags&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Tuesday&lt;/th&gt;
+      &lt;td&gt;Lists&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th scope="row" colspan="2"&gt;Total&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+      <div class="demo">
+        <p class="demo-label">Result</p>
+        <table>
+          <caption>Weekly study plan</caption>
+          <thead>
+            <tr><th scope="col">Day</th><th scope="col">Topic</th><th scope="col">Hours</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Monday</th><td>Text tags</td><td>2</td></tr>
+            <tr><th scope="row">Tuesday</th><td>Lists</td><td>1</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th scope="row" colspan="2">Total</th><td>3</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <dl>
+        <dt>&lt;caption&gt;</dt>
+        <dd>The title of the table. It must be the first thing inside <code>&lt;table&gt;</code>.</dd>
+        <dt>&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</dt>
+        <dd>Group the heading rows, the main rows and the summary rows.</dd>
+        <dt>scope</dt>
+        <dd>Says whether a heading belongs to a column (<code>col</code>) or a row (<code>row</code>). Screen readers use it to read cells in context.</dd>
+      </dl>
+    </section>
+
+    <section id="span" class="section">
+      <h2>Merging cells</h2>
+      <p><code>colspan</code> makes a cell stretch across columns. <code>rowspan</code> makes it stretch down rows.</p>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th colspan="2"&gt;Class schedule&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan="2"&gt;Morning&lt;/td&gt;
+    &lt;td&gt;HTML&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;CSS&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      <div class="demo">
+        <p class="demo-label">Result</p>
+        <table>
+          <tr><th colspan="2">Class schedule</th></tr>
+          <tr><td rowspan="2">Morning</td><td>HTML</td></tr>
+          <tr><td>CSS</td></tr>
+        </table>
+      </div>
+      <p>When a cell spans two columns, leave out one <code>&lt;td&gt;</code> in that row. Each row must still add up to the same number of columns.</p>
+    </section>
+
+    <section class="section">
+      <h2>Good to know</h2>
+      <dl>
+        <dt>Data only</dt>
+        <dd>Use tables for information that really has rows and columns. Page layout is done with CSS and the tags on Page 8.</dd>
+        <dt>Borders and spacing</dt>
+        <dd>HTML gives tables no borders by default. The look comes from CSS, which is why the tables on this site have borders in <code>style.css</code>.</dd>
+        <dt>Wide tables on phones</dt>
+        <dd>Wrap a wide table in a <code>&lt;div&gt;</code> that CSS lets scroll sideways.</dd>
+      </dl>
+    </section>
+
+    <section class="section">
+      <h2>Practice</h2>
+      <ol class="steps">
+        <li>Build a table of your weekly schedule with a caption and heading row.</li>
+        <li>Add a total row at the bottom using <code>&lt;tfoot&gt;</code> and <code>colspan</code>.</li>
+        <li>Add <code>scope</code> to every heading cell.</li>
+      </ol>
+    </section>
+
+    <section class="section pager">
+      <a href="lists.html">&larr; Page 4: Lists</a>
+      <a href="forms.html">Page 6: Forms &rarr;</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Learn HTML. Made for beginners.</p>
+    <a href="#top">Back to top</a>
+  </footer>
+</body>
+</html>
