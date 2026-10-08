@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn HTML step by step: text, links, lists, tables, forms, media and page layout.">
+  <title>Learn HTML – Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">&lt;learn-html&gt;</a>
+    <nav aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="text.html">Text</a>
+      <a href="links.html">Links</a>
+      <a href="lists.html">Lists</a>
+      <a href="tables.html">Tables</a>
+      <a href="forms.html">Forms</a>
+      <a href="media.html">Media</a>
+      <a href="semantic.html">Semantic</a>
+      <a href="metadata.html">Metadata</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Write HTML. See the page change.</h1>
+        <p>Nine short pages cover everything a beginner needs. Start by editing the code on the right: the result updates as you type.</p>
+        <a class="button" href="#structure">Start with page structure</a>
+      </div>
+
+      <div class="playground">
+        <label for="code">HTML</label>
+        <textarea id="code" spellcheck="false" aria-describedby="hint">&lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;p&gt;My first &lt;strong&gt;web page&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Change this text&lt;/li&gt;
+  &lt;li&gt;Add a new &amp;lt;li&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;</textarea>
+        <p id="hint" class="hint">Scripts are switched off in the preview.</p>
+        <span class="label">Result</span>
+        <iframe id="preview" title="Result of your HTML" sandbox></iframe>
+        <button type="button" id="reset" class="link-button">Reset example</button>
+      </div>
+    </section>
+
+    <section id="structure" class="section">
+      <h2>Page 1: how an HTML page is built</h2>
+      <p>Every page has the same skeleton. Learn it once and you can read any page on the web.</p>
+
+      <div class="skeleton">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Page title&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;…&lt;/header&gt;
+  &lt;main&gt;…&lt;/main&gt;
+  &lt;footer&gt;…&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <dl>
+          <dt>&lt;!DOCTYPE html&gt;</dt>
+          <dd>Tells the browser this is a modern HTML page.</dd>
+          <dt>&lt;html&gt;</dt>
+          <dd>Wraps the whole page. The <code>lang</code> attribute sets the page language.</dd>
+          <dt>&lt;head&gt;</dt>
+          <dd>Information about the page. Nothing here appears on screen except the title in the browser tab.</dd>
+          <dt>&lt;body&gt;</dt>
+          <dd>Everything people see: headings, text, images, links.</dd>
+          <dt>&lt;header&gt;, &lt;main&gt;, &lt;footer&gt;</dt>
+          <dd>Name the parts of the page: top, main content, bottom.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The nine pages</h2>
+      <p>Go in order. Tick a page when you finish it; your progress is saved in this browser.</p>
+      <p id="progress" class="progress" aria-live="polite"></p>
+      <ol class="lessons">
+        <li><label><input type="checkbox" data-page="index"><a href="index.html"><span>Home &amp; page structure</span> The skeleton of every page</a></label></li>
+        <li><label><input type="checkbox" data-page="text"><a href="text.html"><span>Text formatting tags</span> Headings, paragraphs, bold, italic</a></label></li>
+        <li><label><input type="checkbox" data-page="links"><a href="links.html"><span>Links, images, video, audio</span> Connect pages and add content</a></label></li>
+        <li><label><input type="checkbox" data-page="lists"><a href="lists.html"><span>Lists</span> Ordered, unordered and description lists</a></label></li>
+        <li><label><input type="checkbox" data-page="tables"><a href="tables.html"><span>Tables</span> Show data in rows and columns</a></label></li>
+        <li><label><input type="checkbox" data-page="forms"><a href="forms.html"><span>Forms</span> Collect input from visitors</a></label></li>
+        <li><label><input type="checkbox" data-page="media"><a href="media.html"><span>Multimedia</span> Embed video, audio and more</a></label></li>
+        <li><label><input type="checkbox" data-page="semantic"><a href="semantic.html"><span>Semantic and layout tags</span> Give structure a meaning</a></label></li>
+        <li><label><input type="checkbox" data-page="metadata"><a href="metadata.html"><span>Metadata</span> What the browser and search engines read</a></label></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Learn HTML. Made for beginners.</p>
+    <a href="#top" onclick="window.scrollTo({top:0})">Back to top</a>
+  </footer>
+
+  <script>
+    // Live preview
+    var code = document.getElementById('code');
+    var preview = document.getElementById('preview');
+    var starter = code.value;
+    function update() { preview.srcdoc = code.value; }
+    code.addEventListener('input', update);
+    document.getElementById('reset').addEventListener('click', function () {
+      code.value = starter; update();
+    });
+    update();
+
+    // Progress tracker (saved in this browser)
+    var boxes = document.querySelectorAll('.lessons input');
+    var out = document.getElementById('progress');
+    var done = [];
+    try { done = JSON.parse(localStorage.getItem('learn-html-done')) || []; } catch (e) {}
+    function show() {
+      var n = 0;
+      boxes.forEach(function (b) { if (b.checked) n++; });
+      out.textContent = n + ' of ' + boxes.length + ' pages done';
+    }
+    boxes.forEach(function (b) {
+      b.checked = done.indexOf(b.dataset.page) !== -1;
+      b.addEventListener('change', function () {
+        var list = [];
+        boxes.forEach(function (x) { if (x.checked) list.push(x.dataset.page); });
+        try { localStorage.setItem('learn-html-done', JSON.stringify(list)); } catch (e) {}
+        show();
+      });
+    });
+    show();
+  </script>
+</body>
+</html>
