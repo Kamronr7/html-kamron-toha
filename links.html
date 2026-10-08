@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn HTML links, images, video and audio: the a, img, video and audio tags with examples.">
+  <meta name="author" content="Learn HTML">
+  <title>Links, Images, Video and Audio – Learn HTML</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <a class="logo" href="index.html">&lt;learn-html&gt;</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="text.html">Text</a>
+      <a href="links.html" aria-current="page">Links</a>
+      <a href="lists.html">Lists</a>
+      <a href="tables.html">Tables</a>
+      <a href="forms.html">Forms</a>
+      <a href="media.html">Media</a>
+      <a href="semantic.html">Semantic</a>
+      <a href="metadata.html">Metadata</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero page-intro">
+      <div class="hero-text">
+        <h1>Page 3: Links, images, video and audio</h1>
+        <p>Links connect pages together. Images, video and audio bring your page to life. Each one is a single tag with a few attributes.</p>
+        <p class="jump">On this page: <a href="#links">Links</a>, <a href="#images">Images</a>, <a href="#video">Video</a>, <a href="#audio">Audio</a></p>
+      </div>
+    </section>
+
+    <section id="links" class="section">
+      <h2>Links: the &lt;a&gt; tag</h2>
+      <p>The <code>&lt;a&gt;</code> (anchor) tag makes a link. The <code>href</code> attribute says where it goes, and the text between the tags is what people click.</p>
+      <pre><code>&lt;!-- Another page in your site --&gt;
+&lt;a href="metadata.html"&gt;Go to Metadata&lt;/a&gt;
+
+&lt;!-- A page on another website, opened in a new tab --&gt;
+&lt;a href="https://developer.mozilla.org"
+   target="_blank" rel="noopener noreferrer"&gt;MDN Web Docs&lt;/a&gt;
+
+&lt;!-- A spot on the same page (needs a matching id) --&gt;
+&lt;a href="#audio"&gt;Jump to Audio&lt;/a&gt;
+
+&lt;!-- Email and phone --&gt;
+&lt;a href="mailto:hello@example.com"&gt;Send an email&lt;/a&gt;
+&lt;a href="tel:+998901234567"&gt;Call us&lt;/a&gt;</code></pre>
+
+      <div class="demo">
+        <p class="demo-label">Try these</p>
+        <ul class="plain">
+          <li><a href="metadata.html">Go to Metadata</a> (same site)</li>
+          <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN Web Docs</a> (new tab)</li>
+          <li><a href="#audio">Jump to Audio</a> (same page)</li>
+        </ul>
+      </div>
+
+      <dl>
+        <dt>href</dt>
+        <dd>The destination. A file name or path for your own pages, a full <code>https://</code> address for other sites.</dd>
+        <dt>target="_blank"</dt>
+        <dd>Opens the link in a new tab. Add <code>rel="noopener noreferrer"</code> with it for safety.</dd>
+        <dt>Good link text</dt>
+        <dd>Write "Read the forms guide", not "click here". It helps everyone, especially people using screen readers.</dd>
+      </dl>
+    </section>
+
+    <section id="images" class="section">
+      <h2>Images: the &lt;img&gt; tag</h2>
+      <p><code>&lt;img&gt;</code> has no closing tag. Put your picture files in the <code>images</code> folder and point to them with <code>src</code>.</p>
+      <pre><code>&lt;img src="images/photo.jpg"
+     alt="Students writing code at a laptop"
+     width="400" height="250"&gt;
+
+&lt;!-- Add a caption with figure --&gt;
+&lt;figure&gt;
+  &lt;img src="images/photo.jpg" alt="Students writing code"&gt;
+  &lt;figcaption&gt;Our first coding class&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+      <div class="demo">
+        <p class="demo-label">Working image</p>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='160'%3E%3Crect width='320' height='160' fill='%232547d0'/%3E%3Ctext x='160' y='96' font-size='40' fill='white' text-anchor='middle' font-family='Georgia,serif'%3E%26lt;img%26gt;%3C/text%3E%3C/svg%3E"
+               alt="A blue rectangle with the text img" width="320" height="160">
+          <figcaption>An image with a caption</figcaption>
+        </figure>
+        <p class="demo-label">Broken image: the alt text appears instead</p>
+        <img src="images/this-file-does-not-exist.jpg" alt="This is the alt text. It shows when the picture cannot load.">
+      </div>
+
+      <dl>
+        <dt>src</dt>
+        <dd>The path to the image file. Check the spelling and the folder name, because a wrong path gives a broken image.</dd>
+        <dt>alt</dt>
+        <dd>A short description. Screen readers read it aloud, and it shows if the image fails to load. Always include it.</dd>
+        <dt>width and height</dt>
+        <dd>The size in pixels. Setting both stops the page from jumping as images load.</dd>
+      </dl>
+    </section>
+
+    <section id="video" class="section">
+      <h2>Video: the &lt;video&gt; tag</h2>
+      <pre><code>&lt;video controls width="480" poster="images/cover.jpg"&gt;
+  &lt;source src="images/lesson.mp4" type="video/mp4"&gt;
+  &lt;source src="images/lesson.webm" type="video/webm"&gt;
+  Your browser does not support video.
+&lt;/video&gt;</code></pre>
+      <dl>
+        <dt>controls</dt>
+        <dd>Shows play, pause and volume buttons. Without it, visitors cannot start the video.</dd>
+        <dt>poster</dt>
+        <dd>A picture shown before the video plays.</dd>
+        <dt>&lt;source&gt;</dt>
+        <dd>Lists file formats. The browser plays the first one it understands. MP4 works almost everywhere.</dd>
+        <dt>Fallback text</dt>
+        <dd>The line inside the tag shows only in browsers that cannot play video.</dd>
+      </dl>
+    </section>
+
+    <section id="audio" class="section">
+      <h2>Audio: the &lt;audio&gt; tag</h2>
+      <pre><code>&lt;audio controls&gt;
+  &lt;source src="images/welcome.mp3" type="audio/mpeg"&gt;
+  &lt;source src="images/welcome.ogg" type="audio/ogg"&gt;
+  Your browser does not support audio.
+&lt;/audio&gt;</code></pre>
+      <p>It works like video: <code>controls</code> adds the player, and <code>&lt;source&gt;</code> offers different formats. Avoid <code>autoplay</code>, because browsers often block it and it annoys visitors.</p>
+    </section>
+
+    <section class="section">
+      <h2>Practice</h2>
+      <ol class="steps">
+        <li>Put a picture in your <code>images</code> folder and show it on a page with <code>&lt;img&gt;</code> and a good <code>alt</code>.</li>
+        <li>Add a link from <code>index.html</code> to <code>links.html</code>.</li>
+        <li>Add a short MP4 file or MP3 file and play it with <code>controls</code>.</li>
+      </ol>
+      <p>Page 7 covers multimedia in more depth, including embedding videos from other sites.</p>
+    </section>
+
+    <section class="section pager">
+      <a href="text.html">&larr; Page 2: Text formatting tags</a>
+      <a href="lists.html">Page 4: Lists &rarr;</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Learn HTML. Made for beginners.</p>
+    <a href="#top">Back to top</a>
+  </footer>
+</body>
+</html>
